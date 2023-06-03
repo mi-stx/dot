@@ -1,0 +1,13 @@
+{
+	"bootstrapped": true,
+	"repositories":
+	[
+		"https://raw.githubusercontent.com/mi-sublime/dot/master/packages.json"
+	],
+	"installed_packages":
+	[
+		"Package Control",
+		"Theme - Soda",
+		"Color Scheme - Two",
+	],
+}
