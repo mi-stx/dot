@@ -72,7 +72,7 @@ if [ "$(command -v xcodebuild)" ]; then
 fi
 
 # Install plugins
-print "Installing php-cs-fixer" "info" # Formatter (PHP-CS-Fixer)
+print "Installing php-cs-fixer" "info" # Formatter
 # curl -Lk "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/releases/download/v3.17.0/php-cs-fixer.phar" --create-dirs -o "${ASSETS_DIR}/bin/php-cs-fixer.phar"
 sudo chmod a+x "${ASSETS_DIR}/bin/php-cs-fixer.phar"
 
