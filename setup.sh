@@ -103,14 +103,13 @@ mv ./bin/uncrustify "${ASSETS_DIR}/bin/uncrustify"
 sudo chmod a+x "${ASSETS_DIR}/bin/uncrustify"
 
 print "Installing perltidy" "info" # Formatter
-curl -Lk "https://github.com/perltidy/perltidy/archive/master.zip" -o "perltidy-master.zip"
-tar -xzf "perltidy-master.zip"
-cd "perltidy-master" || exit 1
-perl pm2pl
-mv "perltidy-20181120.01.pl" "${ASSETS_DIR}/bin/perltidy"
-cd "${SCRIPT_DIR}" || exit 1
-rm -rf "perltidy-master"
-rm "perltidy-master.zip"
+# curl -Lk "https://github.com/perltidy/perltidy/archive/refs/heads/master.zip" -o "perltidy-master.zip"
+# tar -xzvf perltidy-master.zip
+# cd perltidy-master
+# perl pm2pl
+# mv perltidy-20230309.02.pl "${ASSETS_DIR}/bin/perltidy"
+# cd "${SCRIPT_DIR}"
+# rm -rf perltidy-master && rm perltidy-master.zip
 sudo chmod a+x "${ASSETS_DIR}/bin/perltidy"
 
 print "Installing shellcheck" "info" # SublimeLinter-shellcheck
