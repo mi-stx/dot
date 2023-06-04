@@ -10,7 +10,9 @@
 		"Theme - Soda",
 		"Color Scheme - Two",
 		"AlignTab",
+		"AutoWrap",
 		"Terminus",
+		// "AutomaticPackageReloader",
 		"WordingStatus"
 	],
 }
