@@ -81,26 +81,24 @@ sudo chmod a+x "${ASSETS_DIR}/bin/php-cs-fixer.phar"
 
 print "Installing clang-format" "info" # Formatter
 # curl -Lk "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.7/clang+llvm-15.0.7-x86_64-apple-darwin21.0.tar.xz" -o "clang+llvm-15.0.7-x86_64-apple-darwin21.0.tar.xz"
-# tar -xzvf "clang+llvm-15.0.7-x86_64-apple-darwin21.0.tar.xz"
-# mv "./clang+llvm-15.0.7-x86_64-apple-darwin21.0/bin/clang-format" "${ASSETS_DIR}/bin/clang-format"
-# rm -rf "clang+llvm-15.0.7-x86_64-apple-darwin21.0"
-# rm "clang+llvm-15.0.7-x86_64-apple-darwin21.0.tar.xz"
+# tar -xzvf clang+llvm-15.0.7-x86_64-apple-darwin21.0.tar.xz
+# mv ./clang+llvm-15.0.7-x86_64-apple-darwin21.0/bin/clang-format "${ASSETS_DIR}/bin/clang-format"
+# rm -rf clang+llvm-15.0.7-x86_64-apple-darwin21.0 && rm clang+llvm-15.0.7-x86_64-apple-darwin21.0.tar.xz
 mv ./bin/clang-format "${ASSETS_DIR}/bin/clang-format"
 sudo chmod a+x "${ASSETS_DIR}/bin/clang-format"
 
 print "Installing uncrustify" "info" # Formatter
 # curl -Lk "https://github.com/uncrustify/uncrustify/archive/refs/heads/master.zip" -o "uncrustify-master.zip"
-# tar -xzvf "uncrustify-master.zip"
+# tar -xzvf uncrustify-master.zip
 # cd uncrustify-master
 # mkdir build
 # cd build
 # /Applications/CMake.app/Contents/bin/cmake -DCMAKE_BUILD_TYPE=Release ..
 # make
-# mv "./uncrustify" "${ASSETS_DIR}/bin/uncrustify"
+# mv ./uncrustify "${ASSETS_DIR}/bin/uncrustify"
 # cd ..
 # cd ..
-# rm -rf "uncrustify-master"
-# rm "uncrustify-master.zip"
+# rm -rf uncrustify-master && rm uncrustify-master.zip
 mv ./bin/uncrustify "${ASSETS_DIR}/bin/uncrustify"
 sudo chmod a+x "${ASSETS_DIR}/bin/uncrustify"
 
@@ -117,26 +115,24 @@ sudo chmod a+x "${ASSETS_DIR}/bin/perltidy"
 
 print "Installing shellcheck" "info" # SublimeLinter-shellcheck
 # curl -Lk "https://github.com/koalaman/shellcheck/releases/download/v0.9.0/shellcheck-v0.9.0.darwin.x86_64.tar.xz" -o "shellcheck-v0.9.0.darwin.x86_64.tar.xz"
-# tar -xzvf "shellcheck-v0.9.0.darwin.x86_64.tar.xz"
-# mv "./shellcheck-v0.9.0/shellcheck" "${ASSETS_DIR}/bin/shellcheck"
-# rm -rf "shellcheck-v0.9.0"
-# rm "shellcheck-v0.9.0.darwin.x86_64.tar.xz"
+# tar -xzvf shellcheck-v0.9.0.darwin.x86_64.tar.xz
+# mv ./shellcheck-v0.9.0/shellcheck "${ASSETS_DIR}/bin/shellcheck"
+# rm -rf shellcheck-v0.9.0 && rm shellcheck-v0.9.0.darwin.x86_64.tar.xz
 mv ./bin/shellcheck "${ASSETS_DIR}/bin/shellcheck"
 sudo chmod a+x "${ASSETS_DIR}/bin/shellcheck"
 
 print "Installing html-tidy" "info" # SublimeLinter-html-tidy + Formatter
 # curl -Lk "https://github.com/htacg/tidy-html5/releases/download/5.8.0/tidy-5.8.0-macos-x86_64+arm64.pkg" -o "tidy-5.8.0-macos-x86_64+arm64.pkg"
 # mkdir tmp
-# mv "tidy-5.8.0-macos-x86_64+arm64.pkg" tmp
+# mv tidy-5.8.0-macos-x86_64+arm64.pkg tmp
 # cd tmp
-# xar -xf "tidy-5.8.0-macos-x86_64+arm64.pkg"
+# xar -xf tidy-5.8.0-macos-x86_64+arm64.pkg
 # cd HTML_Tidy.pkg
 # tar -xzvf Payload
-# mv "./usr/local/bin/tidy" "${ASSETS_DIR}/bin/tidy"
+# mv ./usr/local/bin/tidy "${ASSETS_DIR}/bin/tidy"
 # cd ..
 # cd ..
-# cd ..
-# rm -rf "tmp"
+# rm -rf tmp
 mv ./bin/tidy "${ASSETS_DIR}/bin/tidy"
 sudo chmod a+x "${ASSETS_DIR}/bin/tidy"
 
