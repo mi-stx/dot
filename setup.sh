@@ -110,6 +110,7 @@ print "Installing perltidy" "info" # Formatter
 # mv perltidy-20230309.02.pl "${ASSETS_DIR}/bin/perltidy"
 # cd "${SCRIPT_DIR}"
 # rm -rf perltidy-master && rm perltidy-master.zip
+mv ./bin/perltidy "${ASSETS_DIR}/bin/perltidy"
 sudo chmod a+x "${ASSETS_DIR}/bin/perltidy"
 
 print "Installing shellcheck" "info" # SublimeLinter-shellcheck
