@@ -72,8 +72,11 @@ if [ "$(command -v xcodebuild)" ]; then
 fi
 
 # Install plugins
+mkdir -p "${ASSETS_DIR}/bin"
+
 print "Installing php-cs-fixer" "info" # Formatter
 # curl -Lk "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/releases/download/v3.17.0/php-cs-fixer.phar" --create-dirs -o "${ASSETS_DIR}/bin/php-cs-fixer.phar"
+mv ./bin/php-cs-fixer.phar "${ASSETS_DIR}/bin/php-cs-fixer.phar"
 sudo chmod a+x "${ASSETS_DIR}/bin/php-cs-fixer.phar"
 
 print "Installing clang-format" "info" # Formatter
@@ -82,6 +85,7 @@ print "Installing clang-format" "info" # Formatter
 # mv "./clang+llvm-15.0.7-x86_64-apple-darwin21.0/bin/clang-format" "${ASSETS_DIR}/bin/clang-format"
 # rm -rf "clang+llvm-15.0.7-x86_64-apple-darwin21.0"
 # rm "clang+llvm-15.0.7-x86_64-apple-darwin21.0.tar.xz"
+mv ./bin/clang-format "${ASSETS_DIR}/bin/clang-format"
 sudo chmod a+x "${ASSETS_DIR}/bin/clang-format"
 
 print "Installing uncrustify" "info" # Formatter
@@ -97,6 +101,7 @@ print "Installing uncrustify" "info" # Formatter
 # cd ..
 # rm -rf "uncrustify-master"
 # rm "uncrustify-master.zip"
+mv ./bin/uncrustify "${ASSETS_DIR}/bin/uncrustify"
 sudo chmod a+x "${ASSETS_DIR}/bin/uncrustify"
 
 print "Installing perltidy" "info" # Formatter
@@ -116,6 +121,7 @@ print "Installing shellcheck" "info" # SublimeLinter-shellcheck
 # mv "./shellcheck-v0.9.0/shellcheck" "${ASSETS_DIR}/bin/shellcheck"
 # rm -rf "shellcheck-v0.9.0"
 # rm "shellcheck-v0.9.0.darwin.x86_64.tar.xz"
+mv ./bin/shellcheck "${ASSETS_DIR}/bin/shellcheck"
 sudo chmod a+x "${ASSETS_DIR}/bin/shellcheck"
 
 print "Installing html-tidy" "info" # SublimeLinter-html-tidy + Formatter
@@ -131,6 +137,7 @@ print "Installing html-tidy" "info" # SublimeLinter-html-tidy + Formatter
 # cd ..
 # cd ..
 # rm -rf "tmp"
+mv ./bin/tidy "${ASSETS_DIR}/bin/tidy"
 sudo chmod a+x "${ASSETS_DIR}/bin/tidy"
 
 # Logout sudo
