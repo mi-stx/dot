@@ -9,9 +9,11 @@
 		"Package Control",
 		"Theme - Soda",
 		"Color Scheme - Two",
+		"A File Icon",
 		"ColorHelper",
 		"BracketHighlighter",
-
+		// EasyDiff,FileDiffs
+		"HexViewer",
 		"StringEncode",
 		"AlignTab",
 		"AutoWrap",
