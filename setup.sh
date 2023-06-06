@@ -26,35 +26,43 @@ print () {
         COLOR="0m" # colorless
     fi
 
-    STARTCOLOR="\\e[$COLOR"
-    ENDCOLOR="\\e[0m"
+    START="\\e[$COLOR"
+    END="\\e[0m"
+    TYPE="$(tr '[:lower:]' '[:upper:]' <<< ${2:0:1})${2:1}" # capitalizing word
 
-    printf "$STARTCOLOR%b$ENDCOLOR" "$1\\n"
+    printf "$START[$TYPE] %b$END" "$1\\n"
 }
 
 # Check system
 OS=$(uname -s)
 if [ "${OS}" != "Darwin" ]; then
-    print "[Error] ${OS} is not supported.\\nExit." "error" >&2
+    print "${OS} is not supported.\\nExit." "error" >&2
     exit 1
 fi
 
-# Create default folders
-if open -Ra "${APPLICATION}"; then
-    print "Creating ${APPLICATION} default folders" "success"
-    open -a "${APPLICATION}"
-    pkill -9 "${APPLICATION}"
-else
-    print "[Error] ${APPLICATION} does not exist.\\nExit." "error" >&2
-    exit 1
-fi
+# Check dependencies
+declare -a bin=(
+    "node"
+    "npm"
+    "php"
+    "git"
+    "python3"
+    "ruby"
+)
+
+for i in "${bin[@]}"; do
+    if ! [ -x "$(command -v ${i})" ]; then
+        print "${i} does not exist in this system.\\nPlease install it first.\\nExit." "error" >&2
+        exit 1
+    fi
+done
 
 # Check PHP requirements
 function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
-cur="$(php -v | grep PHP -m 1 | awk '{print $2}')"
-min=5.6.0 # Formatter (PHP-CS-Fixer)
+cur="$(php -v | sed -n '/PHP/s/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/p')"
+min=7.4.0 # Formatter (PHP-CS-Fixer)
 if ! version_gt "$cur" "$min"; then
-    print  "[Error] Current PHP ($cur) does not meet the minimum version requirement of PHP $min\\nExit." "error" >&2
+    print  "The installed PHP ($cur) version is lower than the minimum required version of $min\\nExit." "error" >&2
     exit 1
 fi
 
@@ -68,10 +76,22 @@ sudo npm update -g
 
 # Accept Xcode license
 if [ "$(command -v xcodebuild)" ]; then
+    print "Accept Xcode license" "info"
     sudo xcodebuild -license accept
 fi
 
-# Install plugins
+# Create default folders
+if open -Ra "${APPLICATION}"; then
+    print "Creating ${APPLICATION} default folders" "success"
+    open -a "${APPLICATION}"
+    path=$(mdfind -name "kMDItemFSName=='${APPLICATION}.app'")
+    "${path}"/Contents/SharedSupport/bin/subl --command exit
+else
+    print "${APPLICATION} does not exist.\\nExit." "error" >&2
+    exit 1
+fi
+
+# Install binaries
 mkdir -p "${ASSETS_DIR}/bin"
 
 print "Installing php-cs-fixer" "info" # Formatter
@@ -141,12 +161,6 @@ print "Logout sudo" "success"
 sudo -k
 
 # Install plugins
-declare -a bin=(
-    "node"
-    "python3"
-    "ruby"
-)
-
 declare -a python=(
     "CodeIntel" # SublimeCodeIntel
     "pylint" # SublimeLinter-pylint
@@ -170,12 +184,6 @@ declare -a javascript=(
     "terser" # Formatter
 )
 
-for i in "${bin[@]}"; do
-    if ! [ -x "$(command -v "${i}")" ]; then
-        print "[Error] ${i} does not exist.\\nExit." "error" >&2
-        exit 1
-    fi
-done
 
 for i in "${python[@]}"; do
     print "Installing ${i}" "info"
@@ -209,13 +217,8 @@ for i in "${javascript[@]}"; do
 done
 
 # Clone config branch
-if [ -x "$(command -v git)" ]; then
-    print "Cloning config master branch" "info"
-    git clone "${CFG_REPO}.git" --branch "master" --single-branch "${CFG_DIR}"
-else
-    print "[Error] git does not exist.\\nExit." "error" >&2
-    exit 1
-fi
+print "Cloning config master branch" "info"
+git clone "${CFG_REPO}.git" --branch "master" --single-branch "${CFG_DIR}"
 
 # Install assets
 print "Installing config files" "info"
