@@ -24,6 +24,18 @@
 					"branch": "master"
 				}
 			]
+		},
+		{
+			"name": "Formatter",
+			"details": "https://github.com/mi-sublime/formatter",
+			"description": "A plugin to beautify and minify source code for Sublime Text 3/4",
+			"labels": ["formatting", "beautify", "minify"],
+			"releases": [
+				{
+					"sublime_text": ">=3000",
+					"branch": "master"
+				}
+			]
 		}
 	]
 }
