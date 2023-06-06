@@ -53,6 +53,16 @@ declare -a bin=(
 for i in "${bin[@]}"; do
     if ! [ -x "$(command -v ${i})" ]; then
         print "${i} does not exist in this system.\\nPlease install it first.\\nExit." "error" >&2
+        case "${i}" in
+            node | npm)
+                print "Please download and install ${i} from https://nodejs.org" "info"
+                ;;
+            php)
+                print "Please install ${i}:\\n\$/bin/bash -c '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)'\\n\$ brew install php\\n$ brew link php" "info"
+                ;;
+            *)
+                ;;
+        esac
         exit 1
     fi
 done
