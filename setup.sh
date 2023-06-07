@@ -79,7 +79,7 @@ fi
 
 # Update pip3
 print "Updating pip3" "info"
-sudo -H pip3 install --upgrade pip
+pip3 install --user --upgrade pip
 
 # Update all npm global packages
 print "Updating npm global packages" "info"
