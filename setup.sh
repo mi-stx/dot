@@ -77,6 +77,9 @@ if ! version_gt "$cur" "$min"; then
     exit 1
 fi
 
+# Update pip3
+sudo python3 -m pip install --upgrade pip
+
 # Update all npm global packages
 print "Updating npm global packages" "info"
 sudo npm update -g
