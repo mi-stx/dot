@@ -59,7 +59,7 @@ for i in "${bin[@]}"; do
                 print "Please download and install ${i} from https://nodejs.org" "info"
                 ;;
             php)
-                print "Please install ${i}:\\n\$/bin/bash -c '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)'\\n\$ brew install php\\n$ brew link php" "info"
+                print "Please install ${i}:\\n\$ /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\\n\$ brew install php\\n\$ brew link php" "info"
                 ;;
             *)
                 ;;
@@ -76,10 +76,6 @@ if ! version_gt "$cur" "$min"; then
     print  "The installed PHP ($cur) version is lower than the minimum required version of $min\\nExit." "error" >&2
     exit 1
 fi
-
-# Update pip3
-print "Updating pip3" "info"
-pip3 install --user --upgrade pip
 
 # Update all npm global packages
 print "Updating npm global packages" "info"
