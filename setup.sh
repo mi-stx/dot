@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Packages setup for Sublime Text 4 on MacOSX
+# Go to System Preferences/Security & Privacy/Full Disk Access And give permission to the terminal
 
 APPLICATION="Sublime Text";
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
