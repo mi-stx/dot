@@ -235,7 +235,7 @@ for i in "${javascript[@]}"; do
     print "Installing ${i}" "info"
     case "${i}" in
         "eslint")
-            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-standard eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
             ;;
         "prettier")
             sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-prettier eslint-plugin-prettier stylelint-config-prettier stylelint-prettier
