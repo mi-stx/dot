@@ -22,7 +22,7 @@ print () {
     elif [ "$2" == "warning" ] ; then
         COLOR="7;33m" # yellow
     elif [ "$2" == "info" ] ; then
-        COLOR="7;94m" # light blue
+        COLOR="7;96m" # light cyan
     else
         COLOR="0m" # colorless
     fi
