@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Packages setup for Sublime Text 4 on MacOSX
-# Go to System Preferences/Security & Privacy/Full Disk Access And give permission to the terminal
+# Go to System > Preferences > Security & Privacy > Full Disk Access > [X] Terminal
+# Usage: bash setup.sh
 
 APPLICATION="Sublime Text";
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -40,6 +41,10 @@ if [ "${OS}" != "Darwin" ]; then
     print "${OS} is not supported.\\nExit." "error" >&2
     exit 1
 fi
+
+# Logout sudo
+print "Logout sudo" "success"
+sudo -k
 
 # Check dependencies
 declare -a bin=(
@@ -191,10 +196,6 @@ print "Installing html-tidy" "info" # SublimeLinter-html-tidy + Formatter
 mv ./bin/tidy "${ASSETS_DIR}/bin/tidy"
 sudo chmod a+x "${ASSETS_DIR}/bin/tidy"
 
-# Logout sudo
-print "Logout sudo" "success"
-sudo -k
-
 # Install plugins
 declare -a python=(
     "CodeIntel" # SublimeCodeIntel
@@ -234,19 +235,19 @@ for i in "${javascript[@]}"; do
     print "Installing ${i}" "info"
     case "${i}" in
         "eslint")
-            npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-standard eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-standard eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
             ;;
         "prettier")
-            npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-prettier eslint-plugin-prettier stylelint-config-prettier stylelint-prettier
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-prettier eslint-plugin-prettier stylelint-config-prettier stylelint-prettier
             ;;
         "stylelint")
-            npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" postcss stylelint-config-recommended stylelint-config-standard stylelint-group-selectors stylelint-no-indistinguishable-colors stylelint-a11y
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" postcss stylelint-config-recommended stylelint-config-standard stylelint-group-selectors stylelint-no-indistinguishable-colors stylelint-a11y
             ;;
         "cleancss")
-            npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "clean-css-cli"
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "clean-css-cli"
             ;;
         *)
-            npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}"
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}"
             ;;
     esac
 done
