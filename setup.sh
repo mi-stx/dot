@@ -53,27 +53,52 @@ declare -a bin=(
 
 for i in "${bin[@]}"; do
     if ! [ -x "$(command -v ${i})" ]; then
-        print "${i} does not exist in this system.\\nPlease install it first.\\nExit." "error" >&2
         case "${i}" in
             node | npm)
-                print "Please download and install ${i} from https://nodejs.org" "info"
+                print "Please download ${i} from https://nodejs.org and install it." "info"
                 ;;
             php)
-                print "Please install ${i}:\\n\$ /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\\n\$ brew install php\\n\$ brew link php" "info"
+                print "Please install ${i}:\\n\$ /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\\n\$ brew install php\\n\$ brew link php\\n\$ echo 'export PATH=\"/usr/local/opt/php/bin:\$PATH\"' >> ~/.zshrc" "info"
+                ;;
+            python3)
+                print "Please install ${i}:\\n\$ /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\\n\$ brew install python3\\n\$ brew link python3\\n\$ echo 'export PATH=\"/usr/local/opt/python3/bin:\$PATH\"' >> ~/.zshrc" "info"
+                ;;
+            ruby)
+                print "Please install ${i}:\\n\$ /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\\n\$ brew install ruby\\n\$ brew link ruby\\n\$ echo 'export PATH=\"/usr/local/opt/ruby/bin:\$PATH\"' >> ~/.zshrc" "info"
                 ;;
             *)
                 ;;
         esac
+        print "${i} does not exist in this system.\\nExit." "error" >&2
         exit 1
     fi
 done
 
 # Check PHP requirements
 function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
-cur="$(php -v | sed -n '/PHP/s/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/p')"
-min=7.4.0 # Formatter (PHP-CS-Fixer)
-if ! version_gt "$cur" "$min"; then
-    print  "The installed PHP ($cur) version is lower than the minimum required version of $min\\nExit." "error" >&2
+curphp="$(php -v | sed -n '/PHP/s/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/p')"
+minphp=7.4.0 # Formatter (PHP-CS-Fixer)
+if ! version_gt "$curphp" "$minphp"; then
+    print "Please install the lastest PHP:\\n\$ /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\\n\$ brew install php\\n\$ brew link php\\n\$ echo 'export PATH=\"/usr/local/opt/php/bin:\$PATH\"' >> ~/.zshrc" "info"
+    print "The installed PHP ($curphp) version is lower than the minimum required version of $minphp\\nExit." "error" >&2
+    exit 1
+fi
+
+# Check python3 requirements
+curpython3="$(python3 -V | sed -n '/Python/s/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/p')"
+minpython3=3.10.0 # Formatter (All)
+if ! version_gt "$curpython3" "$minpython3"; then
+    print "Please install the lastest python3:\\n\$ /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\\n\$ brew install python3\\n\$ brew link python3\\n\$ echo 'export PATH=\"/usr/local/opt/python3/bin:\$PATH\"' >> ~/.zshrc" "info"
+    print "The installed python3 ($curpython3) version is lower than the minimum required version of $minpython3\\nExit." "error" >&2
+    exit 1
+fi
+
+# Check ruby requirements
+curruby="$(ruby -v | sed -n '/ruby/s/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/p')"
+minruby=3.2.0 # Formatter (RuboCop)
+if ! version_gt "$curruby" "$minruby"; then
+    print "Please install the lastest ruby:\\n\$ /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\\n\$ brew install ruby\\n\$ brew link ruby\\n\$ echo 'export PATH=\"/usr/local/opt/ruby/bin:\$PATH\"' >> ~/.zshrc" "info"
+    print "The installed ruby ($curruby) version is lower than the minimum required version of $minruby\\nExit." "error" >&2
     exit 1
 fi
 
