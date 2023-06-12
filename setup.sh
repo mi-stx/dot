@@ -238,10 +238,10 @@ for i in "${javascript[@]}"; do
             sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
             ;;
         "prettier")
-            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-prettier eslint-plugin-prettier stylelint-config-prettier stylelint-prettier
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" eslint-config-prettier eslint-plugin-prettier stylelint-prettier
             ;;
         "stylelint")
-            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" postcss stylelint-config-recommended stylelint-config-standard stylelint-group-selectors stylelint-no-indistinguishable-colors stylelint-a11y
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" stylelint-config-standard stylelint-config-recommended mi-stx/stylelint-group-selectors#master mi-stx/stylelint-no-indistinguishable-colors#master mi-stx/stylelint-a11y#master
             ;;
         "cleancss")
             sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "clean-css-cli"
