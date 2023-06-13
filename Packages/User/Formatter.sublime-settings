@@ -98,6 +98,7 @@
             "format_on_save": false,
             "syntaxes": ["js"],
             "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/eslint",
+            "args": ["--resolve-plugins-relative-to", "${packages}/User/formatter.assets/javascript/node_modules", "--no-eslintrc"],
             "config_path": {
                 "default": "${packages}/User/formatter.assets/config/eslint_rc.json"
             }
