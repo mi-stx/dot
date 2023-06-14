@@ -5,8 +5,8 @@
         "browser": true
     },
     "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "script",
+        "ecmaVersion": 13,
+        "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
         }
