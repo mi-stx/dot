@@ -90,7 +90,7 @@
             "syntaxes": ["css", "scss", "sass", "less"],
             "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/csscomb",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/csscombrc.json"
+                "default": "${packages}/User/formatter.assets/config/csscomb_rc.json"
             }
         },
         "eslint": {
