@@ -240,6 +240,9 @@ for i in "${javascript[@]}"; do
         "stylelint")
             sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}" stylelint-config-standard stylelint-config-recommended stylelint-prettier mi-stx/stylelint-group-selectors#master mi-stx/stylelint-no-indistinguishable-colors#master mi-stx/stylelint-a11y#master
             ;;
+        "csscomb")
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" mi-stx/csscomb.js#master
+            ;;
         "cleancss")
             sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "clean-css-cli"
             ;;
