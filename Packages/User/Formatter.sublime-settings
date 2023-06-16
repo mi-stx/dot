@@ -202,7 +202,7 @@
             "syntaxes": ["css", "scss", "sass", "less"],
             "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/cleancss",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/cleancssrc.json"
+                "default": "${packages}/User/formatter.assets/config/cleancss_rc.json"
             }
         },
         "htmlminifier": {
