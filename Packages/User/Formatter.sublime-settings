@@ -119,7 +119,7 @@
             "syntaxes": ["js", "css", "html", "json"],
             "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/js-beautify",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/jsbeautifyrc.json"
+                "default": "${packages}/User/formatter.assets/config/jsbeautify_rc.json"
             }
         },
         "jsonmax": {
