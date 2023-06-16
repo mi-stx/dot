@@ -246,6 +246,9 @@ for i in "${javascript[@]}"; do
         "cleancss")
             sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "clean-css-cli"
             ;;
+        "html-minifier")
+            sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" mi-stx/html-minifier
+            ;;
         *)
             sudo npm install --save-dev --prefix="${ASSETS_DIR}/javascript" "${i}"
             ;;
