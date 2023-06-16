@@ -211,7 +211,7 @@
             "syntaxes": ["html", "xml"],
             "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/html-minifier",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/htmlminifierrc.json"
+                "default": "${packages}/User/formatter.assets/config/htmlminifier_rc.json"
             }
         },
         "jsonmin": {
