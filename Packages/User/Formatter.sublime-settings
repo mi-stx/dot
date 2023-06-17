@@ -226,7 +226,7 @@
             "syntaxes": ["js"],
             "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/terser",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/terserrc.json"
+                "default": "${packages}/User/formatter.assets/config/terser_rc.json"
             }
         }
     }
