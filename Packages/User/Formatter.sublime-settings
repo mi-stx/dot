@@ -184,7 +184,7 @@
             "executable_path": "${packages}/User/formatter.assets/bin/uncrustify",
             "config_path": {
                 "objc": "${packages}/User/formatter.assets/config/uncrustifyrc_objc.cfg",
-                "default": "${packages}/User/formatter.assets/config/uncrustifyrc.cfg"
+                "default": "${packages}/User/formatter.assets/config/uncrustify_rc.cfg"
             }
         },
         "yapf": {
