@@ -144,9 +144,9 @@
             "disable": false,
             "format_on_save": false,
             "syntaxes": ["php"],
-            "executable_path": "${packages}/User/formatter.assets/bin/php-cs-fixer-v2.phar",
+            "executable_path": "${packages}/User/formatter.assets/bin/php-cs-fixer.phar",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/phpcsfixerrc.php"
+                "default": "${packages}/User/formatter.assets/config/php_cs_fixer_rc.php"
             }
         },
         "prettier": {
