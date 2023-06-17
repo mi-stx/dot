@@ -21,7 +21,7 @@
     "environ": {
         "PATH": [],
         "GEM_PATH": ["${packages}/User/formatter.assets/ruby"],
-        "PYTHONPATH": ["${packages}/User/formatter.assets/python/lib/python3.7/site-packages"]
+        "PYTHONPATH": ["${packages}/User/formatter.assets/python/lib/___PYTHON___/site-packages"]
     },
 
     // Formatter specific settings
@@ -193,7 +193,7 @@
             "syntaxes": ["python"],
             "executable_path": "${packages}/User/formatter.assets/python/bin/yapf",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/yapfrc.yapf"
+                "default": "${packages}/User/formatter.assets/config/yapf_rc.yapf"
             }
         },
         "cleancss": {

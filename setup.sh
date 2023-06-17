@@ -263,6 +263,11 @@ git clone "${CFG_REPO}.git" --branch "master" --single-branch "${CFG_DIR}"
 print "Installing config files" "info"
 cp -R "${CFG_DIR}/Packages/User" "${PACKAGES_DIR}"
 
+# Update PYTHONPATH
+py=$(ls "${ASSETS_DIR}/python/lib")
+print "Update PYTHONPATH to ${py} in Formatter.sublime-settings" "info"
+sed -i '' "s/___PYTHON___/$py/" "${USER_DIR}/Formatter.sublime-settings"
+
 # Show hidden files for 'mv'
 shopt -s dotglob
 
