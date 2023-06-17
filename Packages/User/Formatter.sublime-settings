@@ -137,7 +137,7 @@
             "syntaxes": ["perl"],
             "executable_path": "${packages}/User/formatter.assets/bin/perltidy",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/perltidyrc.cfg"
+                "default": "${packages}/User/formatter.assets/config/perltidy_rc.cfg"
             }
         },
         "phpcsfixer": {
