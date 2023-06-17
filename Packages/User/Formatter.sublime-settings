@@ -109,8 +109,8 @@
             "syntaxes": ["html", "xml"],
             "executable_path": "${packages}/User/formatter.assets/bin/tidy",
             "config_path": {
-                "html": "${packages}/User/formatter.assets/config/htmltidyrc_html.cfg",
-                "xml": "${packages}/User/formatter.assets/config/htmltidyrc_xml.cfg"
+                "html": "${packages}/User/formatter.assets/config/htmltidy_html_rc.cfg",
+                "xml": "${packages}/User/formatter.assets/config/htmltidy_xml_rc.cfg"
             }
         },
         "jsbeautifier": {
