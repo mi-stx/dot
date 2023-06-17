@@ -81,7 +81,7 @@
             "syntaxes": ["c", "c++", "objc", "objc++", "js", "java", "proto"],
             "executable_path": "${packages}/User/formatter.assets/bin/clang-format",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/clangformatrc.yaml"
+                "default": "${packages}/User/formatter.assets/config/clang_format_llvm_rc.yaml"
             }
         },
         "csscomb": {
