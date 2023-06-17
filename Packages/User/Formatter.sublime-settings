@@ -183,7 +183,8 @@
             "syntaxes": ["c", "c++", "cs", "objc", "objc++", "d", "java", "pawn", "vala"],
             "executable_path": "${packages}/User/formatter.assets/bin/uncrustify",
             "config_path": {
-                "objc": "${packages}/User/formatter.assets/config/uncrustifyrc_objc.cfg",
+                "objc": "${packages}/User/formatter.assets/config/uncrustify_objc_rc.cfg",
+                "java": "${packages}/User/formatter.assets/config/uncrustify_sun_java_rc.cfg",
                 "default": "${packages}/User/formatter.assets/config/uncrustify_rc.cfg"
             }
         },
