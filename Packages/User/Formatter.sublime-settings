@@ -128,7 +128,7 @@
             "syntaxes": ["json"],
             /* build-in, no executable */
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/jsonmaxrc.json"
+                "default": "${packages}/User/formatter.assets/config/jsonmax_rc.json"
             }
         },
         "perltidy": {
