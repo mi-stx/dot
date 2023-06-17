@@ -164,7 +164,7 @@
             "syntaxes": ["ruby"],
             "executable_path": "${packages}/User/formatter.assets/ruby/bin/rubocop",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/rubocoprc.yml"
+                "default": "${packages}/User/formatter.assets/config/rubocop_rc.yml"
             }
         },
         "stylelint": {
