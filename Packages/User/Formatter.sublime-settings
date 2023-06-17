@@ -72,7 +72,7 @@
             "syntaxes": ["python"],
             "executable_path": "${packages}/User/formatter.assets/python/bin/black",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/blackrc.toml"
+                "default": "${packages}/User/formatter.assets/config/black_rc.toml"
             }
         },
         "clangformat": {
