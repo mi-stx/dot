@@ -63,7 +63,7 @@
             "syntaxes": ["bash"],
             "executable_path": "${packages}/User/formatter.assets/python/bin/beautysh",
             "config_path": {
-                "default": "${packages}/User/formatter.assets/config/beautyshrc.json"
+                "default": "${packages}/User/formatter.assets/config/beautysh_rc.json"
             }
         },
         "black": {
