@@ -218,6 +218,8 @@ declare -a javascript=(
     "cleancss" # Formatter (clean-css-cli)
     "html-minifier" # Formatter
     "terser" # Formatter
+    "prettydiff" # Formatter
+    "sql-formatter" # Formatter
 )
 
 
