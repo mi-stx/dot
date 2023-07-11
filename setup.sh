@@ -202,6 +202,7 @@ declare -a python=(
     "pylint" # SublimeLinter-pylint
     "beautysh" # Formatter
     "black" # Formatter
+    "python-minifier" # Formatter
     "yapf" # Formatter
 )
 
