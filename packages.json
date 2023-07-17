@@ -27,7 +27,7 @@
 		},
 		{
 			"name": "Formatter",
-			"details": "https://github.com/bitst0rm-pub/formatter",
+			"details": "https://github.com/bitst0rm-pub/Formatter",
 			"description": "A plugin to beautify and minify source code for Sublime Text 3/4",
 			"labels": ["formatting", "beautify", "minify"],
 			"releases": [
