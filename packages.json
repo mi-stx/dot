@@ -8,8 +8,7 @@
 			"labels": ["theme"],
 			"releases": [
 				{
-					"sublime_text": ">=3000",
-					"branch": "master"
+					"sublime_text": ">=3000"
 				}
 			]
 		},
@@ -20,8 +19,7 @@
 			"labels": ["color scheme"],
 			"releases": [
 				{
-					"sublime_text": ">=3000",
-					"branch": "master"
+					"sublime_text": ">=3000"
 				}
 			]
 		},
@@ -32,8 +30,7 @@
 			"labels": ["formatting", "beautify", "minify"],
 			"releases": [
 				{
-					"sublime_text": ">=3000",
-					"branch": "master"
+					"sublime_text": ">=3000"
 				}
 			]
 		}
