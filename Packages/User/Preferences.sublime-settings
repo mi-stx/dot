@@ -6,6 +6,7 @@
     "dark_color_scheme": "Two Dark.sublime-color-scheme",
     "light_color_scheme": "Two Light.sublime-color-scheme",
     "translate_tabs_to_spaces": true,
+    "word_wrap": false,
     "draw_minimap_border": true,
     "highlight_line": true,
     "caret_style": "smooth",
@@ -19,6 +20,7 @@
     "bold_folder_labels": true,
     "show_encoding": true,
     "show_line_endings": true,
+    "hot_exit": "always",
     "show_full_path": true,
-    "ignored_packages": ["Vintage"]
+    "index_files": true
 }
