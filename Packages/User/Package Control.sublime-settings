@@ -14,9 +14,9 @@
 		"ColorHelper",
 		"FileManager",
 		"Formatter",
-		"HexViewer",
+		//"HexViewer",
 		"Package Control",
-		"StringEncode",
+		//"StringEncode",
 		"Terminus",
 		"Theme Dosa",
 		// EasyDiff,FileDiffs
