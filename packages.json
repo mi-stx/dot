@@ -2,8 +2,8 @@
 	"schema_version": "3.0.0",
 	"packages": [
 		{
-			"name": "Theme - Soda",
-			"details": "https://github.com/mi-stx/soda-theme",
+			"name": "Theme Soda",
+			"details": "https://github.com/bitst0rm-pub/soda-theme",
 			"description": "Dark and light custom themes for Sublime Text 3/4",
 			"labels": ["theme"],
 			"releases": [
@@ -13,9 +13,9 @@
 			]
 		},
 		{
-			"name": "Color Scheme - Two",
+			"name": "Color Scheme Two",
 			"details": "https://github.com/bitst0rm-pub/color-scheme-two",
-			"description": "Color scheme based on Atom's One for Sublime Text 3/4",
+			"description": "A color scheme based on Atom One for Sublime Text 3/4",
 			"labels": ["color scheme"],
 			"releases": [
 				{
