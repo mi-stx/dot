@@ -2,9 +2,9 @@
 	"schema_version": "3.0.0",
 	"packages": [
 		{
-			"name": "Theme Soda",
-			"details": "https://github.com/bitst0rm-pub/soda-theme",
-			"description": "Dark and light custom themes for Sublime Text 3/4",
+			"name": "Theme Dosa",
+			"details": "https://github.com/bitst0rm-pub/theme-dosa",
+			"description": "Dark and light custom themes for Sublime Text 2/3/4",
 			"labels": ["theme"],
 			"releases": [
 				{
