@@ -2,24 +2,23 @@
 	"bootstrapped": true,
 	"repositories":
 	[
-		"https://raw.githubusercontent.com/mi-sublime/dot/master/packages.json"
+		"https://raw.githubusercontent.com/mi-stx/dot/master/packages.json"
 	],
 	"installed_packages":
 	[
-		"Package Control",
-		"Theme - Soda",
-		"Color Scheme - Two",
 		"A File Icon",
-		"ColorHelper",
-		"BracketHighlighter",
-		// EasyDiff,FileDiffs
-		"HexViewer",
-		"Formatter",
-		"StringEncode",
 		"AlignTab",
 		"AutoWrap",
+		"BracketHighlighter",
+		"Color Scheme Two",
+		"ColorHelper",
+		"FileManager",
+		"Formatter",
+		"HexViewer",
+		"Package Control",
+		"StringEncode",
 		"Terminus",
-		// "AutomaticPackageReloader",
-		"WordingStatus"
-	],
+		"Theme Soda",
+		// EasyDiff,FileDiffs
+	]
 }

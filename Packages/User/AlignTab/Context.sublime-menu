@@ -1,0 +1,19 @@
+[
+    {
+      "id": "aligntab",
+      "caption": "AlignTab",
+      "children": [
+          {"caption" : "-"},
+          {
+          "caption": "Two Spaces Colon :",
+          "command": "align_tab",
+           "args": {"user_input" : ":/l2r1f1"}
+          },
+          {
+          "caption": "Two Spaces Hash #",
+          "command": "align_tab",
+           "args": {"user_input" : "#/l2r1f1"}
+          }
+      ]
+  }
+]
